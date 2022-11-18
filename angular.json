@@ -3,6 +3,9 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "api-application": "libs/api/application",
+    "api-domain": "libs/api/domain",
+    "api-infrastructure": "libs/api/infrastructure",
     "ui": "apps/ui",
     "ui-e2e": "apps/ui-e2e",
     "ui-shared": "libs/ui/shared"
