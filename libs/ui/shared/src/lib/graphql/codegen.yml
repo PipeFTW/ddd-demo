@@ -1,0 +1,14 @@
+overwrite: true
+schema: "libs/shared/schemas/api.graphqls"
+documents: "libs/ui/shared/src/lib/graphql/**/*.graphql"
+config:
+  addExplicitOverride: true
+generates:
+  libs/ui/shared/src/lib/graphql/generated/graphql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-apollo-angular"
+  libs/ui/shared/src/lib/graphql/generated/introspection/graphql.schema.json:
+    plugins:
+      - "introspection"
