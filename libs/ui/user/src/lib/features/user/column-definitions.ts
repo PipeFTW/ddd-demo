@@ -10,11 +10,11 @@ export const columnDefinitionConstants: ColDef[] = [
   },
   { field: 'id', headerName: 'ID', sortable: true, filter: 'agNumberColumnFilter', floatingFilter: true },
   { field: 'name', headerName: 'Name', sortable: true, filter: 'agTextColumnFilter', floatingFilter: true },
-  { field: 'surname', headerName: 'Nachname', sortable: true, filter: 'agTextColumnFilter', floatingFilter: true },
+  { field: 'surname', headerName: 'Surname', sortable: true, filter: 'agTextColumnFilter', floatingFilter: true },
   { field: 'email', headerName: 'E-Mail', sortable: true, filter: 'agTextColumnFilter', floatingFilter: true },
   {
     field: 'created',
-    headerName: 'Erstellt am',
+    headerName: 'Created',
     sortable: true,
     flex: 1,
     valueFormatter: (params) => {
@@ -26,7 +26,7 @@ export const columnDefinitionConstants: ColDef[] = [
   },
   {
     field: 'updated',
-    headerName: 'Zuletzt aktualisiert',
+    headerName: 'Updated',
     sortable: true,
     flex: 1,
     valueFormatter: (params) => {
