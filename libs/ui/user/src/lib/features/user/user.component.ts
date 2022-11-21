@@ -14,6 +14,8 @@ import {NzNotificationService} from 'ng-zorro-antd/notification';
 })
 export class UserComponent extends BaseTableComponent<User> {
 
+  override TABLE_KEY = 'ddd-demo-user-table';
+
   usersSubject: BehaviorSubject<User[]> = new BehaviorSubject<User[]>([]);
   users$ = this.usersSubject.asObservable();
 
