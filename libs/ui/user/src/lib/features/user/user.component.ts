@@ -37,6 +37,7 @@ export class UserComponent extends BaseTableComponent<User> {
   }
 
   refresh() {
+    this.notifyService.info('Refresh', 'Refreshing users', {nzPlacement: 'bottomRight'});
     this.fetchUsers();
   }
 
