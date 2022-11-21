@@ -16,6 +16,6 @@ Use the docker-compose.yaml file in the local-dev folder to start your database.
 For the MongoDB, a change in the Domain is necessary because of the ID.
 
 ```bash
-docker-compose up -f local-dev/docker-compose.yaml -d
+docker-compose -f local-dev/docker-compose.yaml up -d
 ```
 
