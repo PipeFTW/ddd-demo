@@ -5,6 +5,7 @@ import {User} from '../../domain/user.model';
 import {Action, BaseTableComponent, DropdownAction, TablePersistenceService} from '@ddd-demo/ui/shared';
 import {columnDefinitionConstants} from './column-definitions';
 import {CreateUser} from '../../domain/create-user.model';
+import {NzNotificationService} from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'ddd-demo-user',
@@ -18,7 +19,8 @@ export class UserComponent extends BaseTableComponent<User> {
 
   actions: Action[] = [];
 
-  constructor(tablePersistenceService: TablePersistenceService, private readonly userDataService: UserDataService) {
+  constructor(tablePersistenceService: TablePersistenceService, private readonly userDataService: UserDataService,
+              private readonly notifyService: NzNotificationService) {
     super(tablePersistenceService)
 
     this.actions = [
@@ -51,6 +53,7 @@ export class UserComponent extends BaseTableComponent<User> {
       .pipe(
         take(1),
         tap((user: User) => {
+          this.notifyService.success('User created', `User ${user.name} ${user.surname} created`, {nzPlacement: 'bottomRight'});
           this.usersSubject.next([...this.usersSubject.value, user]);
         })
       )
@@ -61,6 +64,7 @@ export class UserComponent extends BaseTableComponent<User> {
     this.userDataService.deleteUser(user.id).pipe(
       take(1),
       tap((id: number) => {
+        this.notifyService.info('User deleted', `User ${user.name} ${user.surname} deleted`, {nzPlacement: 'bottomRight'});
         this.usersSubject.next(this.usersSubject.value.filter((u: User) => u.id !== user.id));
       })
     ).subscribe();
