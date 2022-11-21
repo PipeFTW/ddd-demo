@@ -1,7 +1,31 @@
 schema {
-    query: Query
+  query: Query
+  mutation: Mutation
 }
 
 type Query {
-    hello: String
+  users: [UserOutput]!
+  findUser(id: Int!): UserOutput
+}
+
+type Mutation {
+  createUser(input: UserInput!): UserOutput!
+  updateUser(id: Int!, input: UserInput!): UserOutput!
+  deleteUser(id: Int!): Int!
+}
+
+
+input UserInput {
+  name: String!
+  surname: String!
+  email: String!
+}
+
+type UserOutput {
+  id: Int!
+  name: String!
+  surname: String!
+  email: String!
+  created: String!
+  updated: String!
 }

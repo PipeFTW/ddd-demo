@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
-import {configuration} from './configuration';
-import {validationSchema} from './validation';
+import { configuration } from './configuration';
+import { validationSchema } from './validation';
 import { ConfigModule } from '@nestjs/config';
+import { SqliteTypeormConfigFactoryService } from './sqlite/sqlite-typeorm-config-factory.service';
+import { GraphqlConfigFactoryService } from './graphql/graphql-config-factory.service';
 
 @Module({
   imports: [
@@ -16,6 +18,6 @@ import { ConfigModule } from '@nestjs/config';
     }),
   ],
   exports: [ConfigModule],
-  providers: []
+  providers: [SqliteTypeormConfigFactoryService, GraphqlConfigFactoryService],
 })
 export class ConfigProviderModule {}
