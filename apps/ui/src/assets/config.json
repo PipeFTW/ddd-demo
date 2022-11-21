@@ -1,0 +1,6 @@
+{
+  "env": "development",
+  "assetRoot": "/assets",
+  "notifyMail": "",
+  "version": "1.0.0"
+}

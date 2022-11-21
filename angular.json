@@ -8,6 +8,7 @@
     "api-infrastructure": "libs/api/infrastructure",
     "ui": "apps/ui",
     "ui-e2e": "apps/ui-e2e",
-    "ui-shared": "libs/ui/shared"
+    "ui-shared": "libs/ui/shared",
+    "ui-user": "libs/ui/user"
   }
 }

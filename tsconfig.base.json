@@ -18,7 +18,8 @@
       "@ddd-demo/api/application": ["libs/api/application/src/index.ts"],
       "@ddd-demo/api/domain": ["libs/api/domain/src/index.ts"],
       "@ddd-demo/api/infrastructure": ["libs/api/infrastructure/src/index.ts"],
-      "@ddd-demo/ui/shared": ["libs/ui/shared/src/index.ts"]
+      "@ddd-demo/ui/shared": ["libs/ui/shared/src/index.ts"],
+      "@ddd-demo/ui/user": ["libs/ui/user/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

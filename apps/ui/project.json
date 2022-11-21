@@ -20,6 +20,7 @@
           "apps/ui/src/assets"
         ],
         "styles": [
+          "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
           "apps/ui/src/styles.scss"
         ],
         "scripts": []

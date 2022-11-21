@@ -1,0 +1,8 @@
+fragment User on UserOutput {
+  id
+  name
+  surname
+  email
+  created
+  updated
+}

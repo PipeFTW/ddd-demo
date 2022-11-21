@@ -1,0 +1,8 @@
+<i nz-icon nzType="more" class='filter-icon' nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu" nzPlacement="bottomRight"></i>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <ul nz-menu>
+    <li nz-menu-item *ngFor="let item of items">
+      <label nz-checkbox [nzChecked]="item.enabled" (nzCheckedChange)="whenCheckboxClicked(item,$event)">{{item.label}}</label>
+    </li>
+  </ul>
+</nz-dropdown-menu>

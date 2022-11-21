@@ -1,0 +1,12 @@
+<div class="action-header">
+  <div class='logo-container'>
+    <img [src]="'assets/logo.svg'" alt='DDDD' style="width: 250px" />
+  </div>
+  <div class="action-bar">
+    <ng-container *ngFor='let action of actions' class='tab-action'>
+      <button nz-button nzShape='round' nzType='dashed' (click)='handleCallback(action)' nzSize='small'>
+        <span *ngIf='action.actionName'>{{action.actionName}}</span>
+      </button>
+    </ng-container>
+  </div>
+</div>

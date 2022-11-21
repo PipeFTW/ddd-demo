@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="94.183395mm"
+   height="12.567708mm"
+   viewBox="0 0 94.183395 12.567708"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="92.98317"
+       y="205.01108"
+       width="443.63055"
+       height="147.87685"
+       id="rect113" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(-6.6923706,-5.8052333)">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-19.562874,-51.57485)"
+       id="text111"
+       style="font-size:64px;white-space:pre;shape-inside:url(#rect113);fill:#000000"><tspan
+         x="92.982422"
+         y="263.40086"
+         id="tspan299">DDD-Demo</tspan></text>
+  </g>
+</svg>

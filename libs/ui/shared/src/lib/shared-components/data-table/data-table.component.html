@@ -1,0 +1,22 @@
+<ag-grid-angular
+  class="ag-theme-alpine"
+  [headerHeight]="headerHeight"
+  [rowHeight]="rowHeight"
+  [columnDefs]="columnDefs"
+  [defaultColDef]="defaultColumnDefinition"
+  [rowModelType]="rowModel"
+  [datasource]="dataSource"
+  [rowClassRules]='rowClassRules'
+  [cacheBlockSize]="cacheBlockSize"
+  [overlayLoadingTemplate]='overlayLoadingTemplate'
+  [overlayNoRowsTemplate]='overlayNoRowsTemplate'
+  [rowData]="data"
+  [rowSelection]="rowSelection"
+  [gridOptions]="gridOptions"
+  [suppressScrollOnNewData]="true"
+  (rowClicked)="whenRowClicked($event)"
+  (columnResized)="whenColumnResized($event)"
+  (columnMoved)="whenColumnMoved($event)"
+  (columnVisible)="whenColumnVisibleChanged($event)"
+  (gridReady)="whenGridReady($event)">
+</ag-grid-angular>

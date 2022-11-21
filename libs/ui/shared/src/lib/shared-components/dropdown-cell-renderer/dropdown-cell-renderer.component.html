@@ -1,0 +1,16 @@
+<div class='dropdown-action'>
+  <a nz-dropdown [nzDropdownMenu]='menu' nzTrigger='click'>
+    <span nz-icon nzType='bars' nzTheme='outline' class='icon-action'></span>
+  </a>
+  <nz-dropdown-menu #menu='nzDropdownMenu'>
+    <ul nz-menu nzSelectable>
+      <li nz-menu-item *ngFor='let a of actions' class='icon-action'>
+        <button nz-button nzType='text' nzSize="small" class='dropdown-action-btn' nzBlock (click)='a.callback(params.data)'>
+          <span class='dropdown-icon' *ngIf='a.icon' nz-icon [nzType]='a.icon' nzTheme='outline'></span>
+          {{a.label}}
+        </button>
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+</div>
+
