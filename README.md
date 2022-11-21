@@ -5,6 +5,7 @@
 This repository is a simple introduction into the DDD pattern. The technologies used are:
   - NestJS: https://docs.nestjs.com/
   - Angular: https://angular.io/
+  - NX: https://nx.dev/
 
 ## Installation
 There are 3 options for databases
