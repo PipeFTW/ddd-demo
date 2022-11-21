@@ -4,6 +4,8 @@ import { validationSchema } from './validation';
 import { ConfigModule } from '@nestjs/config';
 import { SqliteTypeormConfigFactoryService } from './sqlite/sqlite-typeorm-config-factory.service';
 import { GraphqlConfigFactoryService } from './graphql/graphql-config-factory.service';
+import { MongodbConfigFactoryService } from './mongodb/mongodb-config-factory.service';
+import { MariadbTypeormConfigFactoryService } from './mariadb/mariadb-typeorm-config-factory.service';
 
 @Module({
   imports: [
@@ -18,6 +20,6 @@ import { GraphqlConfigFactoryService } from './graphql/graphql-config-factory.se
     }),
   ],
   exports: [ConfigModule],
-  providers: [SqliteTypeormConfigFactoryService, GraphqlConfigFactoryService],
+  providers: [SqliteTypeormConfigFactoryService, GraphqlConfigFactoryService, MongodbConfigFactoryService, MariadbTypeormConfigFactoryService],
 })
 export class ConfigProviderModule {}
