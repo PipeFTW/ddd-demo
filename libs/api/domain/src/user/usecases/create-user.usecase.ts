@@ -1,7 +1,6 @@
 import {IUserRepository} from '../repositories';
 import {CreateUser, User} from '../models';
 
-
 export class CreateUserUsecase {
   constructor(private readonly userRepository: IUserRepository) {
   }

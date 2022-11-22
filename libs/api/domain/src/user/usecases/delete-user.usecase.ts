@@ -1,6 +1,5 @@
 import {IUserRepository} from '../repositories';
 
-
 export class DeleteUserUsecase {
   constructor(private readonly userRepository: IUserRepository) {
   }
