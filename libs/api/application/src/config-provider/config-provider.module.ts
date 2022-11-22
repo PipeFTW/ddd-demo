@@ -3,7 +3,6 @@ import { configuration } from './configuration';
 import { validationSchema } from './validation';
 import { ConfigModule } from '@nestjs/config';
 import { SqliteTypeormConfigFactoryService } from './sqlite/sqlite-typeorm-config-factory.service';
-import { GraphqlConfigFactoryService } from './graphql/graphql-config-factory.service';
 import { MongodbConfigFactoryService } from './mongodb/mongodb-config-factory.service';
 import { MariadbTypeormConfigFactoryService } from './mariadb/mariadb-typeorm-config-factory.service';
 
@@ -20,6 +19,6 @@ import { MariadbTypeormConfigFactoryService } from './mariadb/mariadb-typeorm-co
     }),
   ],
   exports: [ConfigModule],
-  providers: [SqliteTypeormConfigFactoryService, GraphqlConfigFactoryService, MongodbConfigFactoryService, MariadbTypeormConfigFactoryService],
+  providers: [SqliteTypeormConfigFactoryService, MongodbConfigFactoryService, MariadbTypeormConfigFactoryService],
 })
 export class ConfigProviderModule {}

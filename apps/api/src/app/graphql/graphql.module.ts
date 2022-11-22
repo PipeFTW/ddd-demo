@@ -2,7 +2,7 @@ import {Module} from '@nestjs/common';
 import {ResolverModule} from './resolver/resolver.module';
 import {GraphQLModule} from '@nestjs/graphql';
 import {ApolloDriver, ApolloDriverConfig} from '@nestjs/apollo';
-import {GraphqlConfigFactoryService} from '@ddd-demo/api/application';
+import {GraphqlConfigFactoryService} from './graphql-config-factory.service';
 
 @Module({
   imports: [
