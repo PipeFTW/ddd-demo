@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
 import {BehaviorSubject, take, tap} from 'rxjs';
-import {User} from '../../domain/user.model';
 import {Action, BaseTableComponent, DropdownAction, TablePersistenceService} from '@ddd-demo/ui/shared';
 import {columnDefinitionConstants} from './column-definitions';
-import {CreateUser} from '../../domain/create-user.model';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
 import {IUserDataService} from '../../domain/services';
+import {CreateUser, User} from '../../domain/models';
 
 @Component({
   selector: 'ddd-demo-user',
@@ -66,7 +65,7 @@ export class UserComponent extends BaseTableComponent<User> {
   deleteUser(user: User) {
     this.userDataService.deleteUser(user.id).pipe(
       take(1),
-      tap((id: number) => {
+      tap(() => {
         this.notifyService.info('User deleted', `User ${user.name} ${user.surname} deleted`, {nzPlacement: 'bottomRight'});
         this.usersSubject.next(this.usersSubject.value.filter((u: User) => u.id !== user.id));
       })

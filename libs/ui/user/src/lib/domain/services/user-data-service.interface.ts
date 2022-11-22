@@ -1,6 +1,5 @@
 import {Observable} from 'rxjs';
-import {User} from '../user.model';
-import {CreateUser} from '../create-user.model';
+import {CreateUser, User} from '../models';
 
 
 export abstract class IUserDataService {

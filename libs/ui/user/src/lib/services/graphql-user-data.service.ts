@@ -2,9 +2,8 @@ import {Injectable} from '@angular/core';
 import {CreateUserGQL, DeleteUserGQL, GetAllUsersGQL, GetAllUsersQuery, UserInput, UserOutput} from '@ddd-demo/ui/shared';
 import {ApolloQueryResult} from '@apollo/client';
 import {filter, map, Observable} from 'rxjs';
-import {User} from '../domain/user.model';
-import {CreateUser} from '../domain/create-user.model';
 import {IUserDataService} from '../domain/services';
+import {CreateUser, User} from '../domain/models';
 
 @Injectable()
 export class GraphQLUserDataService implements IUserDataService {
