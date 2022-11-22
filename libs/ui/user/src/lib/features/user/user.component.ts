@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
-import {UserDataService} from '../../services/user-data.service';
+import {GraphQLUserDataService} from '../../services/graphql-user-data.service';
 import {BehaviorSubject, take, tap} from 'rxjs';
 import {User} from '../../domain/user.model';
 import {Action, BaseTableComponent, DropdownAction, TablePersistenceService} from '@ddd-demo/ui/shared';
 import {columnDefinitionConstants} from './column-definitions';
 import {CreateUser} from '../../domain/create-user.model';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
+import {IUserDataService} from '../../domain/services';
 
 @Component({
   selector: 'ddd-demo-user',
@@ -21,7 +22,7 @@ export class UserComponent extends BaseTableComponent<User> {
 
   actions: Action[] = [];
 
-  constructor(tablePersistenceService: TablePersistenceService, private readonly userDataService: UserDataService,
+  constructor(tablePersistenceService: TablePersistenceService, private readonly userDataService: IUserDataService,
               private readonly notifyService: NzNotificationService) {
     super(tablePersistenceService)
 

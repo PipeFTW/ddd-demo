@@ -4,11 +4,10 @@ import {ApolloQueryResult} from '@apollo/client';
 import {filter, map, Observable} from 'rxjs';
 import {User} from '../domain/user.model';
 import {CreateUser} from '../domain/create-user.model';
+import {IUserDataService} from '../domain/services';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class UserDataService {
+@Injectable()
+export class GraphQLUserDataService implements IUserDataService {
 
   constructor(
     private readonly getAllUsersGQL: GetAllUsersGQL,
