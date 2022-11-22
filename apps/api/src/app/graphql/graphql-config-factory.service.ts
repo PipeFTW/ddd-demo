@@ -12,7 +12,7 @@ export class GraphqlConfigFactoryService implements GqlOptionsFactory {
     return {
       typePaths: ['libs/shared/schemas/**/*.graphqls'],
       definitions: {
-        path: join(process.cwd(), 'libs/api/application/src/graphql/generated/graphql.ts'),
+        path: join(process.cwd(), 'apps/api/src/app/graphql/generated/graphql.ts'),
         outputAs: 'class',
       },
       driver: ApolloDriver,
