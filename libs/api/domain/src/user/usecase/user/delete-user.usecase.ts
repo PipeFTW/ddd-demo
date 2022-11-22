@@ -1,6 +1,7 @@
-import {IDeleteUser, IUserRepository} from '@ddd-demo/api/domain';
+import {IUserRepository} from '../../repositories';
 
-export class DeleteUserUsecase implements IDeleteUser {
+
+export class DeleteUserUsecase {
   constructor(private readonly userRepository: IUserRepository) {
   }
 

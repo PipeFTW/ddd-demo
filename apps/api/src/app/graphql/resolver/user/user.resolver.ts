@@ -1,7 +1,7 @@
 import {Args, Mutation, Query, Resolver} from '@nestjs/graphql';
 import {Inject} from '@nestjs/common';
-import {CreateUserUsecase, DeleteUserUsecase, FindAllUsersUsecase, FindUserByIdUsecase, UpdateUserUsecase, UsecaseModule} from '@ddd-demo/api/application';
-import {User} from '@ddd-demo/api/domain';
+import {UsecaseModule} from '@ddd-demo/api/application';
+import {CreateUserUsecase, DeleteUserUsecase, FindAllUsersUsecase, FindUserByIdUsecase, UpdateUserUsecase, User} from '@ddd-demo/api/domain';
 import {UserService} from './user.service';
 import {UserInput, UserOutput} from '../../generated/graphql';
 

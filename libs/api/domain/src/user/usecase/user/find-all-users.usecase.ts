@@ -1,6 +1,7 @@
-import {IFindAllUsers, IUserRepository, User} from '@ddd-demo/api/domain';
+import {IUserRepository} from '../../repositories';
+import {User} from '../../models';
 
-export class FindAllUsersUsecase implements IFindAllUsers {
+export class FindAllUsersUsecase {
   constructor(private readonly userRepository: IUserRepository) {
   }
 

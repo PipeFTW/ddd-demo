@@ -1,6 +1,8 @@
-import {CreateUser, IUpdateUser, IUserRepository, User} from '@ddd-demo/api/domain';
+import {CreateUser, User} from '../../models';
+import {IUserRepository} from '../../repositories';
 
-export class UpdateUserUsecase implements IUpdateUser {
+
+export class UpdateUserUsecase {
   constructor(private readonly userRepository: IUserRepository) {
   }
 

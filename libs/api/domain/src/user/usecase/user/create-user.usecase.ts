@@ -1,6 +1,8 @@
-import {CreateUser, ICreateUser, IUserRepository, User} from '@ddd-demo/api/domain';
+import {IUserRepository} from '../../repositories';
+import {CreateUser, User} from '../../models';
 
-export class CreateUserUsecase implements ICreateUser {
+
+export class CreateUserUsecase {
   constructor(private readonly userRepository: IUserRepository) {
   }
 
