@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {GraphQLUserDataService} from '../../services/graphql-user-data.service';
 import {BehaviorSubject, take, tap} from 'rxjs';
 import {User} from '../../domain/user.model';
 import {Action, BaseTableComponent, DropdownAction, TablePersistenceService} from '@ddd-demo/ui/shared';

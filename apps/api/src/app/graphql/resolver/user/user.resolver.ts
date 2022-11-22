@@ -1,6 +1,6 @@
 import {Args, Mutation, Query, Resolver} from '@nestjs/graphql';
 import {Inject} from '@nestjs/common';
-import {UsecaseModule} from '@ddd-demo/api/application';
+import {CREATE_USER_USECASE, DELETE_USER_USECASE, FIND_ALL_USERS_USECASE, FIND_USER_BY_ID_USECASE, UPDATE_USER_USECASE} from '@ddd-demo/api/application';
 import {CreateUserUsecase, DeleteUserUsecase, FindAllUsersUsecase, FindUserByIdUsecase, UpdateUserUsecase, User} from '@ddd-demo/api/domain';
 import {UserService} from './user.service';
 import {UserInput, UserOutput} from '../../generated/graphql';
@@ -9,15 +9,15 @@ import {UserInput, UserOutput} from '../../generated/graphql';
 export class UserResolver {
   constructor(
     private readonly userService: UserService,
-    @Inject(UsecaseModule.CREATE_USER_USECASE)
+    @Inject(CREATE_USER_USECASE)
     private readonly createUserUsecase: CreateUserUsecase,
-    @Inject(UsecaseModule.UPDATE_USER_USECASE)
+    @Inject(UPDATE_USER_USECASE)
     private readonly updateUserUsecase: UpdateUserUsecase,
-    @Inject(UsecaseModule.DELETE_USER_USECASE)
+    @Inject(DELETE_USER_USECASE)
     private readonly deleteUserUsecase: DeleteUserUsecase,
-    @Inject(UsecaseModule.FIND_USER_BY_ID_USECASE)
+    @Inject(FIND_USER_BY_ID_USECASE)
     private readonly findUserByIdUsecase: FindUserByIdUsecase,
-    @Inject(UsecaseModule.FIND_ALL_USERS_USECASE)
+    @Inject(FIND_ALL_USERS_USECASE)
     private readonly findAllUsersUsecase: FindAllUsersUsecase,
   ) {
   }
