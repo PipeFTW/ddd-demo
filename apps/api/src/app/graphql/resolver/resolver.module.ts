@@ -1,6 +1,7 @@
 import {Module} from '@nestjs/common';
-import {UsecaseModule, UserService} from '@ddd-demo/api/application';
-import {UserResolver} from './user.resolver';
+import {UsecaseModule} from '@ddd-demo/api/application';
+import {UserResolver} from './user/user.resolver';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [UsecaseModule.register()],

@@ -1,6 +1,6 @@
-import {Injectable} from '@nestjs/common';
 import {CreateUser, User} from '@ddd-demo/api/domain';
-import {UserInput, UserOutput} from '../generated/graphql';
+import {UserInput, UserOutput} from '../../generated/graphql';
+import {Injectable} from '@nestjs/common';
 
 @Injectable()
 export class UserService {
