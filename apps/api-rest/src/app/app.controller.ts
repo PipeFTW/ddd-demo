@@ -1,6 +1,6 @@
-import {Controller, Get, Inject, Param} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Inject, Param, Post, Put} from '@nestjs/common';
 import {AppService} from './app.service';
-import {FindAllUsersUsecase, FindUserByIdUsecase, User} from '@ddd-demo/api/domain';
+import {CreateUser, CreateUserUsecase, DeleteUserUsecase, FindAllUsersUsecase, FindUserByIdUsecase, UpdateUserUsecase, User} from '@ddd-demo/api/domain';
 import {UserUsecase} from '@ddd-demo/api/application';
 
 @Controller()
@@ -11,6 +11,12 @@ export class AppController {
     private readonly findAllUsersUsecase: FindAllUsersUsecase,
     @Inject(UserUsecase.FIND_USER_BY_ID_USECASE)
     private readonly findUserByIdUsecase: FindUserByIdUsecase,
+    @Inject(UserUsecase.DELETE_USER_USECASE)
+    private readonly deleteUserUsecase: DeleteUserUsecase,
+    @Inject(UserUsecase.UPDATE_USER_USECASE)
+    private readonly updateUserUsecase: UpdateUserUsecase,
+    @Inject(UserUsecase.CREATE_USER_USECASE)
+    private readonly createUserUsecase: CreateUserUsecase
   ) {
   }
 
@@ -22,6 +28,21 @@ export class AppController {
   @Get('users/:id')
   getUserById(@Param('id') id: number): Promise<User> {
     return this.findUserByIdUsecase.findUserById(id);
+  }
+
+  @Post('users')
+  createUser(@Body() input: CreateUser): Promise<User> {
+    return this.createUserUsecase.createUser(input);
+  }
+
+  @Delete('users/:id')
+  deleteUserById(@Param('id') id: number): Promise<number> {
+    return this.deleteUserUsecase.deleteUser(id);
+  }
+
+  @Put('users/:id')
+  updateUserById(@Param('id') id: number, @Body() input: CreateUser): Promise<User> {
+    return this.updateUserUsecase.updateUser(id, input);
   }
 
 }
