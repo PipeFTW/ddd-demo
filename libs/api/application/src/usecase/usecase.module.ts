@@ -1,7 +1,7 @@
 import {Module} from '@nestjs/common';
 import {MariadbRepositoryModule, TypeormModule} from '@ddd-demo/api/infrastructure';
 import {MariadbTypeormConfigFactoryService} from '../config-provider/mariadb/mariadb-typeorm-config-factory.service';
-import {CREATE_USER_USECASE, DELETE_USER_USECASE, FIND_ALL_USERS_USECASE, FIND_USER_BY_ID_USECASE, UPDATE_USER_USECASE, USER_PROVIDERS} from './providers';
+import {USER_PROVIDERS, UserUsecase} from './providers';
 
 @Module({
   imports: [
@@ -24,11 +24,11 @@ export class UsecaseModule {
       module: UsecaseModule,
       providers: [...USER_PROVIDERS],
       exports: [
-        CREATE_USER_USECASE,
-        UPDATE_USER_USECASE,
-        DELETE_USER_USECASE,
-        FIND_USER_BY_ID_USECASE,
-        FIND_ALL_USERS_USECASE
+        UserUsecase.CREATE_USER_USECASE,
+        UserUsecase.UPDATE_USER_USECASE,
+        UserUsecase.DELETE_USER_USECASE,
+        UserUsecase.FIND_USER_BY_ID_USECASE,
+        UserUsecase.FIND_ALL_USERS_USECASE
       ]
     };
   }

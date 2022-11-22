@@ -2,12 +2,12 @@ import {Controller, Get, Inject} from '@nestjs/common';
 
 import {AppService} from './app.service';
 import {FindAllUsersUsecase, User} from '@ddd-demo/api/domain';
-import {FIND_ALL_USERS_USECASE} from '@ddd-demo/api/application';
+import {UserUsecase} from '@ddd-demo/api/application';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService,
-    @Inject(FIND_ALL_USERS_USECASE)
+    @Inject(UserUsecase.FIND_ALL_USERS_USECASE)
     private readonly findAllUsersUsecase: FindAllUsersUsecase,
   ) {}
 
