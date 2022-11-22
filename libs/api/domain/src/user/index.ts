@@ -1,3 +1,3 @@
 export * from './models';
 export * from './repositories';
-export * from './usecase';
+export * from './usecases';

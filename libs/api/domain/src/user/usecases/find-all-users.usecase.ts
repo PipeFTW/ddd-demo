@@ -1,5 +1,5 @@
-import {IUserRepository} from '../../repositories';
-import {User} from '../../models';
+import {IUserRepository} from '../repositories';
+import {User} from '../models';
 
 export class FindAllUsersUsecase {
   constructor(private readonly userRepository: IUserRepository) {
