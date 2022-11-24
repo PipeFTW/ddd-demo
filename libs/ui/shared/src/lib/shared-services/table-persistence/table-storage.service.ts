@@ -10,7 +10,7 @@ export interface ColumnEntity {
 @Injectable({
   providedIn: 'root',
 })
-export class TablePersistenceService {
+export class TableStorageService {
   public storeColumns(tableKey: string, columnDefinitions: ColDef[]) {
     const columnEntities = columnDefinitions.map((columnDefinition) => {
       return {

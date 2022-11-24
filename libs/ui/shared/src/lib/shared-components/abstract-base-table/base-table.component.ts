@@ -1,5 +1,5 @@
 import { ApplyColumnStateParams, ColDef, ColumnApi, GridApi, GridReadyEvent, SortModelItem } from 'ag-grid-community';
-import {TablePersistenceService} from '../../shared-services/table-persistence/table-persistence.service';
+import {TableStorageService} from '../../shared-services';
 import {FilterDropdown} from '../filter-dropdown/filter-dropdown.type';
 import {DropdownAction} from '../dropdown-cell-renderer/dropdown-action.model';
 import {DropdownCellRendererComponent} from '../dropdown-cell-renderer/dropdown-cell-renderer.component';
@@ -17,7 +17,7 @@ export abstract class BaseTableComponent<T> {
   protected TABLE_KEY = 'NotSet';
   protected sortModel: SortModelItem[] = [];
 
-  protected constructor(protected readonly tablePersistenceService: TablePersistenceService) {}
+  protected constructor(protected readonly tablePersistenceService: TableStorageService) {}
 
   protected onActionClick(rowData: T) {
     console.log('BaseTableModule onActionClick');

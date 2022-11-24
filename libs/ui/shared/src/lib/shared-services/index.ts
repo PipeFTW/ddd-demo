@@ -1,1 +1,1 @@
-export * from './table-persistence/table-persistence.service';
+export * from './table-persistence/table-storage.service';

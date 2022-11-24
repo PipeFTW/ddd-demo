@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {BehaviorSubject, take, tap} from 'rxjs';
-import {Action, BaseTableComponent, DropdownAction, TablePersistenceService} from '@ddd-demo/ui/shared';
+import {Action, BaseTableComponent, DropdownAction, TableStorageService} from '@ddd-demo/ui/shared';
 import {columnDefinitionConstants} from './column-definitions';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
 import {CreateUser, IUserDataService, User} from '@ddd-demo/ui/user';
@@ -19,7 +19,7 @@ export class UserComponent extends BaseTableComponent<User> {
 
   actions: Action[] = [];
 
-  constructor(tablePersistenceService: TablePersistenceService, private readonly userDataService: IUserDataService,
+  constructor(tablePersistenceService: TableStorageService, private readonly userDataService: IUserDataService,
               private readonly notifyService: NzNotificationService) {
     super(tablePersistenceService)
 
