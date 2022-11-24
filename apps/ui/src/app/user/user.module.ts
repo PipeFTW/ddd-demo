@@ -23,7 +23,8 @@ import {UserComponent} from './user.component';
     }
   ],
   exports: [
-    UserComponent
+    UserComponent,
+    CreateUserFormComponent
   ]
 })
 export class UserModule {

@@ -1,19 +1,19 @@
 import {Module} from '@nestjs/common';
-import {MariadbRepositoryModule, TypeormModule} from '@ddd-demo/api/infrastructure';
-import {MariadbTypeormConfigFactoryService} from '../config-provider/mariadb/mariadb-typeorm-config-factory.service';
+import {SqliteRepositoryModule, TypeormModule} from '@ddd-demo/api/infrastructure';
 import {USER_PROVIDERS, UserUsecase} from './providers';
+import {SqliteTypeormConfigFactoryService} from '../config-provider/sqlite/sqlite-typeorm-config-factory.service';
 
 @Module({
   imports: [
-    // TypeormModule.register({
-    //   useClass: SqliteTypeormConfigFactoryService,
-    // }),
-    // SqliteRepositoryModule,
-
     TypeormModule.register({
-      useClass: MariadbTypeormConfigFactoryService,
+      useClass: SqliteTypeormConfigFactoryService,
     }),
-    MariadbRepositoryModule,
+    SqliteRepositoryModule,
+
+    // TypeormModule.register({
+    //   useClass: MariadbTypeormConfigFactoryService,
+    // }),
+    // MariadbRepositoryModule,
   ],
   providers: [],
   exports: [],
