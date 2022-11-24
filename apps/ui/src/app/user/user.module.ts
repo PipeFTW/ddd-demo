@@ -24,7 +24,6 @@ import {UserComponent} from './user.component';
   ],
   exports: [
     UserComponent,
-    CreateUserFormComponent
   ]
 })
 export class UserModule {
