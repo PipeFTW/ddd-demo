@@ -6,7 +6,8 @@
                          [columnDefs]="columnDefs"
                          (columnResized)="storeColumns()"
                          (columnMoved)="storeColumns()"
-                         (columnVisibilityChanged)="whenColumnVisibilityChanged()">
+                         (columnVisibilityChanged)="whenColumnVisibilityChanged()"
+                         (gridReady)="whenGridReady($event)">
     </ddd-demo-data-table>
   </ng-container>
 </div>

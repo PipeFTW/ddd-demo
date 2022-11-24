@@ -19,9 +19,9 @@ export class UserComponent extends BaseTableComponent<User> {
 
   actions: Action[] = [];
 
-  constructor(tablePersistenceService: TableStorageService, private readonly userDataService: IUserDataService,
+  constructor(tableStorageService: TableStorageService, private readonly userDataService: IUserDataService,
               private readonly notifyService: NzNotificationService) {
-    super(tablePersistenceService)
+    super(tableStorageService)
 
     this.actions = [
       new Action('Refresh', '', this.refresh.bind(this)),
