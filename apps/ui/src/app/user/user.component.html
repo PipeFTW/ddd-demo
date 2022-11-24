@@ -1,12 +1,12 @@
 <div class="user-container">
   <ddd-demo-action-header [actions]="actions"></ddd-demo-action-header>
+<!--  <ddd-demo-create-user-form></ddd-demo-create-user-form>-->
   <ng-container *ngIf="(users$|async) as users">
     <ddd-demo-data-table [data]="users"
                          [columnDefs]="columnDefs"
                          (columnResized)="storeColumns()"
                          (columnMoved)="storeColumns()"
                          (columnVisibilityChanged)="whenColumnVisibilityChanged()">
-
     </ddd-demo-data-table>
   </ng-container>
 </div>

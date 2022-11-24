@@ -1,1 +1,3 @@
-export * from './lib/ui-user.module';
+export * from './lib/services';
+export * from './lib/domain';
+export * from './lib/features';

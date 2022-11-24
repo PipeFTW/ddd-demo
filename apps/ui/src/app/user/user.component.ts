@@ -3,8 +3,7 @@ import {BehaviorSubject, take, tap} from 'rxjs';
 import {Action, BaseTableComponent, DropdownAction, TablePersistenceService} from '@ddd-demo/ui/shared';
 import {columnDefinitionConstants} from './column-definitions';
 import {NzNotificationService} from 'ng-zorro-antd/notification';
-import {IUserDataService} from '../../domain/services';
-import {CreateUser, User} from '../../domain/models';
+import {CreateUser, IUserDataService, User} from '@ddd-demo/ui/user';
 
 @Component({
   selector: 'ddd-demo-user',

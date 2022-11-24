@@ -1,25 +1,30 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {UserComponent} from './features/user/user.component';
 import {SharedComponentsModule} from '@ddd-demo/ui/shared';
 import {NzNotificationModule} from 'ng-zorro-antd/notification';
-import {IUserDataService} from './domain/services';
-import {GraphQLUserDataService} from './services/graphql-user-data.service';
+import {CreateUserFormComponent, GraphQLUserDataService, IUserDataService} from '@ddd-demo/ui/user';
+import {UserComponent} from './user.component';
+
 
 @NgModule({
-  imports: [CommonModule, SharedComponentsModule, NzNotificationModule],
   declarations: [
     UserComponent
   ],
-  exports: [
-    UserComponent
+  imports: [
+    CommonModule,
+    SharedComponentsModule,
+    NzNotificationModule,
+    CreateUserFormComponent
   ],
   providers: [
     {
       provide: IUserDataService,
       useClass: GraphQLUserDataService
     }
+  ],
+  exports: [
+    UserComponent
   ]
 })
-export class UiUserModule {
+export class UserModule {
 }
